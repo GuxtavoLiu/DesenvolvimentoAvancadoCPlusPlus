@@ -7,7 +7,6 @@ int main ()
 {
 int acerto = 0;
 int resposta;
-int neutro;
 
 
 //////////pergunta 1/////////////
@@ -20,9 +19,11 @@ cout << "4. 18\n"<< endl;
 cout << "Digite o número correspondente a alternativa de sua resposta: "<< endl;
 cin >> resposta;
 if (resposta == 2){
+
+  cout << "Resposta correta!\n" << endl;
   acerto = acerto+1;
 }else{
-  neutro = neutro+1;
+  cout << "Reposta incorreta, a correta seria: 2\n" << endl;
 }
 ///////////////////////////////////
 
@@ -36,9 +37,10 @@ cout << "4. 100\n" << endl;
 cout << "Digite o número correspondente a alternativa de sua resposta: "<< endl;
 cin >> resposta;
 if (resposta == 3){
+  cout << "Resposta correta!" << endl;
   acerto = acerto+1;
 }else{
-  neutro = neutro+1;
+ cout << "Resposta incorreta, a correta seria: 3" << endl;
 }
 
 /////pergunta 3//////
@@ -51,9 +53,11 @@ cout << "4. Cinza\n" << endl;
 cout << "Digite o número correspondente a alternativa de sua resposta: "<< endl;
 cin >> resposta;
 if (resposta == 1){
+  cout << "Resposta correta!" << endl;
   acerto = acerto+1;
 }else{
-  neutro = neutro+1;
+  cout << "Reposta incorreta, o correto seria: 1" << endl;
+
 }
 
 ///////pergunta 4/////
@@ -66,9 +70,10 @@ cout << "4. Eu sou o Capitão América!\n" << endl;
 cout << "Digite o número correspondente a alternativa de sua resposta: "<< endl;
 cin >> resposta;
 if (resposta == 2){
+    cout << "Resposta correta!" << endl;
   acerto = acerto+1;
 }else{
-  neutro = neutro+1;
+ cout << "Resposta incorreta, o correto seria: 2;" << endl;
 }
 
 
@@ -82,9 +87,10 @@ cout << "4. 2022\n" << endl;
 cout << "Digite o número correspondente a alternativa de sua resposta: "<< endl;
 cin >> resposta;
 if (resposta == 2){
+    cout << "Resposta correta!" << endl;
   acerto = acerto+1;
 }else{
-neutro = neutro+1;
+   cout << "Resposta incorreta, o correto seria: 2" << endl;
 }
 
 ////// pergunta 6 /////
@@ -97,9 +103,10 @@ cout << "4. Cabral\n" << endl;
 cout << "Digite o número correspondente a alternativa de sua resposta: "<< endl;
 cin >> resposta;
 if (resposta == 4){
+    cout << "Resposta correta!" << endl;
   acerto = acerto+1;
 }else{
-neutro = neutro+1;
+  cout << "Resposta incorreta, o correto seria: 4" << endl;
 }
 
 ///////pergunta 7////////
@@ -112,9 +119,10 @@ cout << "4. João Marcos\n" << endl;
 cout << "Digite o número correspondente a alternativa de sua resposta: "<< endl;
 cin >> resposta;
 if (resposta == 3){
+    cout << "Resposta correta!" << endl;
   acerto = acerto+1;
 }else{
-neutro = neutro+1;
+  cout << "Resposta incorreta, o correto seria: 3" << endl;
 }
 
 /////pergunta 8 ////////
@@ -127,9 +135,10 @@ cout << "4. Terra\n"<< endl;
 cout << "Digite o número correspondente a alternativa de sua resposta: "<< endl;
 cin >> resposta;
 if (resposta == 4){
+    cout << "Resposta correta!" << endl;
   acerto = acerto+1;
 }else{
-neutro = neutro+1;
+    cout << "Resposta incorreta, o correto seria: 4" << endl;
 }
 
 ///////pergunta 9 /////////
@@ -142,9 +151,10 @@ cout << "4. 50\n"<< endl;
 cout << "Digite o número correspondente a alternativa de sua resposta: "<< endl;
 cin >> resposta;
 if (resposta == 1){
+    cout << "Resposta correta!" << endl;
   acerto = acerto+1;
 }else{
-  neutro = neutro+1;
+    cout << "Resposta incorreta, o correto seria: 1" << endl;;
 }
 
 /////pergunta 10 //////////
@@ -157,7 +167,11 @@ cout << "4. 3\n"<< endl;
 cout << "Digite o número correspondente a alternativa de sua resposta: "<< endl;
 cin >> resposta;
 if (resposta == 3){
+    cout << "Resposta correta!\n" << endl;
   acerto = acerto+1;
+}
+else {
+    cout << "Resposta incorreta, o correto seria: 3" << endl;
 }
 
 cout << endl;

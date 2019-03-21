@@ -19,8 +19,8 @@ int main() {
     std::cout << "Deseja adicionar mais algum número:" << "\n";
     std::cout << "Digite 1 para \"Sim\" e 0 para \"Não\"" << "\n";
 
-    std::cin >> reposta;
-    while (reposta != 0) {
+    std::cin >> resposta;
+    while (resposta != 0) {
 
         if (resposta == 1) {
             do {
@@ -29,10 +29,14 @@ int main() {
             } while (myint);
             std::cout << "Digite 0 se desejar sair, 1 para adicionar mais números." << '\n';
             std::cin >> resposta;
-            else {
-                respota = 0;
-            }
+        } else {
+            std::cout << "Resposta inválida, por favor digite 1 para adicionar mais númeors, e 0 para sair" << '\n';
+            std::cin >> resposta;
+
         }
+        std::cout << "myvector armazena: " << int(myvector.size()) << " números.\n";
     }
+
+
     return 0;
 }

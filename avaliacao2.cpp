@@ -8,86 +8,71 @@
 using namespace std;
 
 struct produto_t {
-  string nome;
-  int preco;
+    string nome;
+    int preco;
 };
 
-void cadastrar(){
-  string minhaString;
+list<produto_t> listaProdutos;
 
-  produto_t aproduto;
-  produto_t *pproduto;
-  pproduto = &aproduto;
+void cadastrar() {
+    produto_t produto;
 
-  vector<produto_t> listaProdutos;
+    cout << "Insira o nome do produto:" << endl;
+    cin >> produto.nome;
+    cout << "Insira o preco do produto:" << endl;
+    cin >> produto.preco;
 
-
-
-  cout << "Insira o nome do produto: ";
-  getline (cin, pproduto->nome);
-  cout << "Insira o preço: ";
-  getline (cin, minhaString);
-  (stringstream) minhaString >> pproduto->preco;
-  listaProdutos.push_back(aproduto);
+    listaProdutos.push_back(produto);
 }
 
+void imprimir() {
 
+    list<produto_t>::iterator p;
 
-void imprimir (list<produto_t>& lista){
-    list<produto_t>::iterator p; //cria um iterador de produtos
+    p = listaProdutos.begin();
 
-    p = lista.begin();
-
-    while(p != lista.end()){
-
-        cout << "Nome: " << (*p).nome << endl;
-        cout << "Preço: " << (*p).preco << endl;
-        cout << "" << endl;
+    while (p != listaProdutos.end()) {
+        cout << "Nome: " << (*p).nome << endl; // Imprimi nome do produto
+        cout << "Preço: " << (*p).preco << endl; // Imprimi preco do produto
+        cout << "------------" << endl;
         p++;
     }
+
 }
 
-int main ()
-{
-  int controle, contador;
+/*           -------          MAIN          ------         */
+int main() {
+    int resposta, numProdutos = 0;
 
-do {
-  std::cout << "Deseja inserir algum produto? Digite \"1\" para SIM e \"0\" para não." << '\n';
-  std::cin >> controle;
-  if (controle == 1) {
-    cadastrar();
-    contador++;
-  } else{
-    std::cout << "Digite uma opção válida, \"1\" ou \"0\"." << '\n';
-    std::cin >> controle;
-  }
+    do {
+        cout << "Deseja inserir algum produto? Digite \"1\" para SIM e \"0\" para não." << endl;
+        cin >> resposta;
+            if (resposta == 1) {
+            cadastrar();
+            numProdutos++;
+
+        } else if (resposta == 0) {
+            cout << "Finalizando adição de produtos." << '\n';
+        } else {
+            cout << "Digite uma opção válida, \"1\" ou \"0\"." << endl;
+            cin >> resposta;
+        }
 
 
-} while(controle != 0);
-//------------------------- LISTAGEM
-if (contador > 0) {
-  imprimir(listaProdutos);
-}else{
-  std::cout << "Finalizando programa." << '\n';
-}
-//----------------------------------
-std::cout << "Finalziando programa." << '\n';
+    } while (resposta != 0);
 
-  std::cout << "Deseja inserir algum produto? Digite \"1\" para SIM e \"0\" para não." << '\n';
-  std::cin >> controle;
 
-  if (controle == 1) {
-    while (controle != 0) {
-      cadastrar();
-      contador++;
-      std::cout << "Deseja inserir algum produto? Digite \"1\" para SIM e \"0\" para não." << '\n';
-      std::cin >> controle;
+    if (numProdutos > 0) {
+
+        imprimir();
+
+    } else {
+        cout << "Nenhum produto foi adicionado, encerrando o programa." << endl;
     }
-  }
 
-  cout << "\nVocê inseriu:\n";
-  cout << pproduto->nome;
-  cout << " - R$ " << pproduto->preco << "\n";
+    cout << "Encerrando o programa!" << endl;
 
-  return 0;
+    return 0;
 }
+
+/*              ------      MAIN                -----=          */

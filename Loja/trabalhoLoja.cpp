@@ -79,6 +79,13 @@ int main() {
           else if (resposta == 2) {
             listarItens();
             std::cout << "Digite 1 para locar." << '\n';
+            std::cout << "Digite 2 para cadastrar item." << '\n';
+            std::cout << "Digite 3 para devolução." << '\n';
+
+            std::cin >> resposta;
+            if (resposta == 1) {
+            }
+
           }
 
         }

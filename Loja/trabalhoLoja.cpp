@@ -15,8 +15,6 @@ int main() {
   std::cout << "|=================================================| \n";
   std::cout << "|  Digite \"1\" para acessar o menu de Clientes;  | \n";
   std::cout << "|  Digite \"2\" para acessar o menu de Acervo;    | \n";
-  std::cout << "|  Digite \"3\" para realizar locação;            | \n";
-  std::cout << "|  Digite \"4\" para realizar devolução           | \n";
   std::cout << "|  Digite \"0\" para encerrar o programa.         | \n";
   std::cout << "|=================================================| \n";
   std::cout << '\n';
@@ -33,30 +31,46 @@ int main() {
       if (resposta == 1) {
         std::cout << "Digite a opção desejada para o que deseja fazer e tecle \"Enter\". \n";
         std::cout << "|=================================================| \n";
-        std::cout << "|  Digite \"1\" para cadastrar clientes;          | \n";
-        std::cout << "|  Digite \"2\" para listar os clientes;          | \n";
+        std::cout << "|  Digite \"1\" para clientes;                    | \n";
+        std::cout << "|  Digite \"2\" para acervos;                     | \n";
         std::cout << "|  Digite \"0\" para encerrar o programa.         | \n";
         std::cout << "|=================================================| \n";
         std::cout << '\n';
         std::cout << "Digite sua resposta: ";
 
         std::cin >> resposta;
+
+        // ENTRA NA OPÇÃO CLIENTES
         if (resposta == 1) {
-          cadastrarCliente();
-        }
-        else if (resposta == 2) {
-          listarClientes();
-          std::cout << "|=================================================| \n";
+
           std::cout << '\n';
 
           std::cout << "Digite a opção desejada para o que deseja fazer e tecle \"Enter\". \n";
           std::cout << "|=================================================| \n";
-          std::cout << "|  Digite \"1\" para alterar cliente;             | \n";
-          std::cout << "|  Digite \"2\" para excluir cliente;             | \n";
+          std::cout << "|  Digite \"1\" para cadastrar cliente;           | \n";
+          std::cout << "|  Digite \"2\" para alterar cliente;             | \n";
+          std::cout << "|  Digite \"3\" para excluir cliente;             | \n";
           std::cout << "|  Digite \"0\" para encerrar o programa.         | \n";
           std::cout << "|=================================================| \n";
           std::cout << '\n';
           std::cout << "Digite sua resposta: ";
+          std::cin >> resposta;
+
+
+
+          if (resposta == 1) {
+            cadastrarClientes(); // inclui listar
+          } else if (resposta == 2) {
+            alterarClientes(); // inclui listar
+          } else if (resposta == 3) {
+            exluirCliente(); // inclui listar
+          }else {
+            std::cout << "Encerrando o programa!" << '\n';
+            exit(1);
+          }
+
+        }
+        else if (resposta == 2) {
         }
         // ACESSA O MENU DE ACERVO
         else if (resposta == 2) {
@@ -93,9 +107,9 @@ int main() {
 
       }
     } else{
-      resposta = 0;
-      std::cout << "resposta foi definida como 0" << '\n';
-      std::cout << "Encerrando programa!" << '\n';
+      std::cout << "Resposta incorreta, por favor digite 1, 2, 3 ou 4." << '\n';
+      std::cin >> resposta;
+
     }
 
 

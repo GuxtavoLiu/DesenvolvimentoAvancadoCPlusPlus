@@ -17,11 +17,8 @@ list<pessoa_t> listaDePessoas;
 
 void cadastrarPessoas() {
   pessoa_t pessoa;
-
   list<pessoa_t>::iterator p;
-
   p = listaDePessoas.begin();
-
   pessoa.codigo = (*p).codigo + 1;
   cout << "Nome do cliente: ";
   cin >> pessoa.nome;
@@ -55,12 +52,12 @@ void excluirPessoa(int var){
 
   p = listaDePessoas.begin();
   while(p != listaDePessoas.end()){
-     if(var == p-> codigo){
-       listaDePessoas.erase(p);
-       break;
-       cout << "Cliente excluido com sucesso!" << endl;
-       cout << " "<< endl;
-     }
+    if(var == p-> codigo){
+      listaDePessoas.erase(p);
+      break;
+      cout << "Cliente excluido com sucesso!" << endl;
+      cout << " "<< endl;
+    }
 
     p++;
   }

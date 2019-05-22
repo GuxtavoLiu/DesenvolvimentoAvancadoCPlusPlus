@@ -28,46 +28,34 @@ void cadastrarAluno()
   cin >> aluno.idade;
 }
 
-
-
-
-void gravarAluno(string char[50]){
-  FILE * pFile;
-  pFile = fopen ( "litaAlunos.txt" , "wb" ); // tenta abrir o arquivo, e cria ele caso n exista
-  fputs ( nomeAluno , pFile ); // insere "This is an apple." no arquivo pFile
-  fclose ( pFile ); // fecha o arquivo
+void cadastrarArquivo(Aluno aluno){
+  FILE *pf;
+  int NUM = 88;
+  int pilido;
+  if((pf = fopen("arquivo.bin", "wb")) == NULL) /* Abre arquivo binário para escrita */
+  {
+    printf("Erro na abertura do arquivo");
+    exit(1);
+  }
+  if(fwrite(&NUM, sizeof(int), 1,pf) != 1)     /* Escreve a variável NUM | o operador sizeof, que retorna o tamanho em bytes da variável ou do tipo de dados. */
+  printf("Erro na escrita do arquivo");
+  fclose(pf);                                    /* Fecha o arquivo */
+  if((pf = fopen("arquivo.bin", "rb")) == NULL) /* Abre o arquivo novamente para leitura */
+  {
+    printf("Erro na abertura do arquivo");
+    exit(1);
+  }
+  if(fread(&pilido, sizeof(int), 1,pf) != 1) /* Le em pilido o valor da variável armazenada anteriormente */
+  printf("Erro na leitura do arquivo");
+  printf("\nO valor de NUM, lido do arquivo é: %d \n\n", pilido);
+  fclose(pf);
 }
 
-int main() {
-  // variaveis
-  char nomeAluno[50];
-  int opcao;
-  // variaveis fim
+
+int main()
+{
+  cadastrarArquivo();
 
 
-
-
-
-
-  cout << "Digite o que deseja fazer" << '\n';
-  cout << "1 gravar aluno" << '\n';
-
-
-  cin >> opcao;
-  do {
-    if (opcao == 1) {
-      cout << "digite o nome do aluno" << '\n';
-      cin >> nomeAluno;
-
-      gravarAluno(nomeAluno);
-    }
-
-
-
-    cout << "fechando o programa por falta de opcoes" << '\n';
-    opcao = 0;
-  } while(opcao != 0);
-
-
-  return 0;
+  return(0);
 }
